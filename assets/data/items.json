@@ -1,3 +1,9 @@
 {
-  "realizacje": []
+  "realizacje": [
+    {
+      "kategoria": "schody-na-beton.json",
+      "zdjecie": "/assets/img/gallery/1.jpg",
+      "podpis": "Testowy opis 1"
+    }
+  ]
 }
