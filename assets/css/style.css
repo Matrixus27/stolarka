@@ -524,6 +524,26 @@ li:hover .dropdown, li:focus-within .dropdown{
   color: var(--concrete-dark);
 }
 
+/* Wariant jednokolumnowy — pełna galeria na stronach kategorii:
+   większe zdjęcia, jedna kolumna, jedno pod drugim, z ładnym odstępem. */
+.gallery-full{
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 2.2rem;
+  max-width: 780px;
+}
+.gallery-full .gallery-item{
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+}
+.gallery-full .gallery-item.tall,
+.gallery-full .gallery-item.wide{ grid-row: auto; grid-column: auto; }
+.gallery-full .gallery-item .tag{
+  left: 1rem; bottom: 1rem;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.7rem;
+}
+
 /* ==========================================================================
    Proces
    ========================================================================== */
@@ -842,6 +862,7 @@ li:hover .dropdown, li:focus-within .dropdown{
   .materials{ flex-direction: column; }
   .materials div{ border-right:none; border-bottom: 1px solid var(--line-light); }
   .gallery{ grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .gallery-full{ gap: 1.6rem; }
   .cta-strip{ flex-direction: column; align-items:flex-start; }
 }
 
@@ -856,6 +877,7 @@ li:hover .dropdown, li:focus-within .dropdown{
   .footer-bottom{ flex-direction: column; align-items:flex-start; }
   .gallery{ grid-template-columns: 1fr; grid-auto-rows: 190px; }
   .gallery-item.wide, .gallery-item.tall{ grid-column: span 1; grid-row: span 1; }
+  .gallery-full{ gap: 1.4rem; }
   .cta-strip{ padding: 1.8rem; }
   .contact-card, .value-card, .info-panel{ padding: 1.4rem; }
 }

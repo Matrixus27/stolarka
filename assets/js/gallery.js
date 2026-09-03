@@ -1,23 +1,32 @@
 // F.H.U.P. Damian Chrustowicz — dynamiczna galeria realizacji
 // Dane wczytywane z assets/data/items.json (edytowane w panelu Pages CMS).
-// Zdjęcia serwowane bezpośrednio z repo — bez automatycznego resize'u,
-// więc warto przed wgraniem lekko zmniejszyć zdjęcia z telefonu/aparatu
-// (np. do ok. 1600-2000px szerokości), żeby galeria ładowała się szybko.
+// Zdjęcia skalowane i kompresowane "w locie" przez Cloudflare Image
+// Transformations (/cdn-cgi/image/...) — darmowe do 5000 przetworzeń/mies.
+// Dzięki temu do panelu można wgrywać zdjęcia prosto z telefonu/aparatu,
+// bez ręcznego zmniejszania — Cloudflare sam dostarczy lekką wersję.
+// UWAGA: to działa dopiero gdy strona jest podpięta pod własną domenę
+// zarządzaną przez Cloudflare (nie na samym *.workers.dev) i gdy w panelu
+// Cloudflare włączona jest opcja Media > Images > Transformations.
 (function () {
-  function imgUrl(path) {
+  function imgUrl(path, opts) {
+    opts = opts || {};
     var clean = String(path || '').replace(/^\/+/, '');
-    return '/' + clean;
+    var params = ['format=auto', 'quality=' + (opts.q || 75)];
+    if (opts.w) params.push('width=' + opts.w);
+    if (opts.h) params.push('height=' + opts.h);
+    if (opts.w && opts.h) params.push('fit=cover');
+    return '/cdn-cgi/image/' + params.join(',') + '/' + clean;
   }
 
   function buildCard(item) {
     var a = document.createElement('a');
     a.className = 'gallery-item is-visible';
-    a.href = imgUrl(item.zdjecie);
+    a.href = imgUrl(item.zdjecie, { w: 1800 });
     a.target = '_blank';
     a.rel = 'noopener';
 
     var img = document.createElement('img');
-    img.src = imgUrl(item.zdjecie);
+    img.src = imgUrl(item.zdjecie, { w: 640, h: 480 });
     img.loading = 'lazy';
     img.alt = item.podpis || item.kategoria || 'Realizacja — F.H.U.P. Damian Chrustowicz';
     img.style.width = '100%';
