@@ -9,6 +9,11 @@
       "kategoria": "stoly-i-stoliki.json",
       "zdjecie": "/assets/img/gallery/5.jpg",
       "podpis": "Stolik test"
+    },
+    {
+      "kategoria": "schody-na-beton.json",
+      "zdjecie": "/assets/img/gallery/10-1.jpg",
+      "podpis": "Schody test2"
     }
   ]
 }
