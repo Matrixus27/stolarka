@@ -1,3 +1,14 @@
 {
-  "realizacje": []
+  "realizacje": [
+    {
+      "kategoria": "Schody na beton",
+      "zdjecie": "/assets/img/gallery/1.jpg",
+      "podpis": "beton test"
+    },
+    {
+      "kategoria": "Schody na beton",
+      "zdjecie": "/assets/img/gallery/11.jpg",
+      "podpis": "test 2"
+    }
+  ]
 }
