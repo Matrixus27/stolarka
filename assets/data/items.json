@@ -1,24 +1,5 @@
 {
   "realizacje": [
-    {
-      "kategoria": "schody-na-beton.json",
-      "zdjecie": "/assets/img/gallery/1.jpg",
-      "podpis": "Testowy opis 1"
-    },
-    {
-      "kategoria": "stoly-i-stoliki.json",
-      "zdjecie": "/assets/img/gallery/5.jpg",
-      "podpis": "Stolik test"
-    },
-    {
-      "kategoria": "schody-na-beton.json",
-      "zdjecie": "/assets/img/gallery/10-1.jpg",
-      "podpis": "Schody test2"
-    },
-    {
-      "kategoria": "balustrady-wewnetrzne.json",
-      "zdjecie": "/assets/img/gallery/4-1.jpg",
-      "podpis": "Balustrada test"
-    }
+    
   ]
 }
