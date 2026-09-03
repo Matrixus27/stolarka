@@ -1,0 +1,49 @@
+# Konfiguracja Pages CMS (app.pagescms.org).
+# Panel logujesz się kontem GitHub na app.pagescms.org — nie trzeba nic
+# dodatkowo wdrażać ani konfigurować pod autoryzację.
+
+media: assets/img/gallery
+
+content:
+  - name: kategorie
+    label: Kategorie realizacji
+    type: collection
+    path: content/kategorie
+    view:
+      primary: name
+    fields:
+      - name: name
+        label: Nazwa kategorii
+        type: string
+        description: "Np. Schody na beton, Meble kuchenne na wymiar..."
+
+  - name: galeria
+    label: Zdjęcia realizacji
+    type: file
+    path: assets/data/items.json
+    fields:
+      - name: realizacje
+        label: Realizacje
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.kategoria} — {fields.podpis}"
+        fields:
+          - name: kategoria
+            label: Kategoria
+            type: reference
+            description: "Jeśli potrzebnej kategorii nie ma na liście, dodaj ją najpierw w 'Kategorie realizacji'."
+            options:
+              collection: kategorie
+              value: "{name}"
+              label: "{name}"
+          - name: zdjecie
+            label: Zdjęcie
+            type: image
+            description: "Przed wgraniem warto lekko zmniejszyć zdjęcie z telefonu/aparatu (np. do ok. 1600-2000px szerokości), żeby galeria ładowała się szybko."
+          - name: podpis
+            label: Podpis (opcjonalnie)
+            type: string
+            required: false
+            description: "Np. Dąb, olejowany"
