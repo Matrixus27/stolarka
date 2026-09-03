@@ -5,20 +5,6 @@
 media: assets/img/gallery
 
 content:
-  - name: kategorie
-    label: Kategorie realizacji
-    type: collection
-    path: content/kategorie
-    format: json
-    filename: '{primary}.json'
-    view:
-      primary: name
-    fields:
-      - name: name
-        label: Nazwa kategorii
-        type: string
-        description: "Np. Schody na beton, Meble kuchenne na wymiar..."
-
   - name: galeria
     label: Zdjęcia realizacji
     type: file
@@ -35,12 +21,14 @@ content:
         fields:
           - name: kategoria
             label: Kategoria
-            type: reference
-            description: "Jeśli potrzebnej kategorii nie ma na liście, dodaj ją najpierw w 'Kategorie realizacji'."
+            type: select
             options:
-              collection: kategorie
-              value: "{name}"
-              label: "{name}"
+              values:
+                - "Schody na beton"
+                - "Schody na konstrukcję"
+                - "Balustrady wewnętrzne"
+                - "Balustrady zewnętrzne"
+                - "Stoły i stoliki"
           - name: zdjecie
             label: Zdjęcie
             type: image
