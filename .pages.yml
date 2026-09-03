@@ -9,6 +9,8 @@ content:
     label: Kategorie realizacji
     type: collection
     path: content/kategorie
+    format: json
+    filename: '{primary}.json'
     view:
       primary: name
     fields:
@@ -21,6 +23,7 @@ content:
     label: Zdjęcia realizacji
     type: file
     path: assets/data/items.json
+    format: json
     fields:
       - name: realizacje
         label: Realizacje
