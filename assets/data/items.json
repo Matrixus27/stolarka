@@ -14,6 +14,11 @@
       "kategoria": "schody-na-beton.json",
       "zdjecie": "/assets/img/gallery/10-1.jpg",
       "podpis": "Schody test2"
+    },
+    {
+      "kategoria": "balustrady-wewnetrzne.json",
+      "zdjecie": "/assets/img/gallery/4-1.jpg",
+      "podpis": "Balustrada test"
     }
   ]
 }
