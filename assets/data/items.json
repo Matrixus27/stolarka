@@ -9,6 +9,11 @@
       "kategoria": "Schody na beton",
       "zdjecie": "/assets/img/gallery/11.jpg",
       "podpis": "test 2"
+    },
+    {
+      "kategoria": "Schody na beton",
+      "zdjecie": "/assets/img/gallery/10.jpg",
+      "podpis": "v3"
     }
   ]
 }
