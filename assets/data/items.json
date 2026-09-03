@@ -4,6 +4,11 @@
       "kategoria": "Schody na beton",
       "zdjecie": "/assets/img/gallery/1.jpg",
       "podpis": "test opis 1 "
+    },
+    {
+      "kategoria": "Schody na beton",
+      "zdjecie": "/assets/img/gallery/11-1.jpg",
+      "podpis": "schody test 2"
     }
   ]
 }
